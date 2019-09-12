@@ -29,3 +29,6 @@ build/
 
 ### VS Code ###
 .vscode/
+/demo1/.mvn/wrapper/*.properties
+/demo1/.mvn/wrapper/*.java
+/demo1/.mvn/wrapper/*.jar
