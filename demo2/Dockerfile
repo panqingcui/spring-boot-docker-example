@@ -4,9 +4,12 @@ FROM openjdk:8-jdk-alpine
 MAINTAINER panqingcui@163.com
 #指令是声明运行时容器提供服务端口， 8080
 EXPOSE 8080
+#义匿名卷
 VOLUME /tmp
+#命令
 ARG DEPENDENCY=target/dependency
 COPY ${DEPENDENCY}/BOOT-INF/lib /app/lib
 COPY ${DEPENDENCY}/META-INF /app/META-INF
 COPY ${DEPENDENCY}/BOOT-INF/classes /app
+
 ENTRYPOINT ["java","-cp","app:app/lib/*","com.example.demo.DemoApplication"]
