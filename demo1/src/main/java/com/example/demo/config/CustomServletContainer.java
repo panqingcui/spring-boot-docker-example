@@ -8,7 +8,6 @@ import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ServletWebServerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.io.IOException;
@@ -21,7 +20,7 @@ import java.io.IOException;
  * @author panqingcui
  * @since 1.0.0
  */
-@Component
+//@Component
 public class CustomServletContainer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
     /**
      *
