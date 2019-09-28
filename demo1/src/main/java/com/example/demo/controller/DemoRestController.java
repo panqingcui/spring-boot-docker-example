@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class DemoRestController {
-    @RequestMapping(value = "/rest_controller",method = RequestMethod.GET)
+    @RequestMapping(value = "/rest_controller", method = RequestMethod.GET)
     //@ResponseBody
-    public String index(){
+    public String index() {
         System.out.println("--------------------------->>>>>>**************");
         return "index";
     }

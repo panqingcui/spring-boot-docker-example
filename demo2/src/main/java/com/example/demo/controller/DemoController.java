@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
  */
 @Controller
 public class DemoController {
-    @RequestMapping(value = "/",method = RequestMethod.GET)
+    @RequestMapping(value = "/", method = RequestMethod.GET)
     @ResponseBody
-    public String index(){
+    public String index() {
         System.out.println("--------------------------->>>>>>**************");
         return "this is docker spring boot";
     }

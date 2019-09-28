@@ -1,8 +1,8 @@
 package com.example;
 
+import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
 
 /**
  * 功能描述,该部分必须以中文句号结尾。
@@ -10,11 +10,15 @@ import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfi
  * @author panqingcui
  * @create 2019-09-24 21:29
  */
-@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-public class DemoApplication {
+@SpringBootApplication
+public class DemoApplication implements ExitCodeGenerator {
 
     public static void main(String[] args) {
-        SpringApplication.run(DemoApplication.class, args);
+        System.exit(SpringApplication.exit(SpringApplication.run(DemoApplication.class, args)));
+        ;
     }
 
+    @Override public int getExitCode() {
+        return 24;
+    }
 }

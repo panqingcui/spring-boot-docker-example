@@ -14,15 +14,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class DemoController {
-    @RequestMapping(value = "/index",method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     //@ResponseBody
-    public String index(){
+    public String index() {
         System.out.println("--------------------------->>>>>>**************");
         return "index";
     }
-    @RequestMapping(value = "/index/body",method = RequestMethod.GET)
-   // @ResponseBody
-    public String indexBody(){
+
+    @RequestMapping(value = "/index/body", method = RequestMethod.GET)
+    // @ResponseBody
+    public String indexBody() {
         System.out.println("进入方法体");
         return "index";
     }

@@ -17,6 +17,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 
 public class ExecutorConfig {
     private static final Logger logger = LoggerFactory.getLogger(ExecutorConfig.class);
+
     @Bean
     public Executor asyncServiceExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();

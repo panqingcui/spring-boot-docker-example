@@ -19,14 +19,14 @@ public class WebSecurityConfigurtion extends WebSecurityConfigurerAdapter {
             .password("{noop}admin").roles("USER", "ADMIN");
     }
 
-//    @Override @Bean
-//    public UserDetailsService userDetailsService() {
-//
-//        User.UserBuilder users = User.withDefaultPasswordEncoder();
-//        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
-//        manager.createUser(users.username("user").password("password").roles("USER").build());
-//        manager.createUser(users.username("admin").password("password").roles("USER", "ADMIN").build());
-//        return manager;
-//
-//    }
+    //    @Override @Bean
+    //    public UserDetailsService userDetailsService() {
+    //
+    //        User.UserBuilder users = User.withDefaultPasswordEncoder();
+    //        InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();
+    //        manager.createUser(users.username("user").password("password").roles("USER").build());
+    //        manager.createUser(users.username("admin").password("password").roles("USER", "ADMIN").build());
+    //        return manager;
+    //
+    //    }
 }

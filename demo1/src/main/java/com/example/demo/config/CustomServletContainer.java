@@ -23,24 +23,26 @@ import java.io.IOException;
 //@Component
 public class CustomServletContainer implements WebServerFactoryCustomizer<ConfigurableWebServerFactory> {
     /**
-     *
      * @param factory
      */
     @Override
     public void customize(ConfigurableWebServerFactory factory) {
-       //factory.setPort(8082);
+        //factory.setPort(8082);
     }
+
     @Bean
     public ServletWebServerFactory servletContainer() {
         TomcatServletWebServerFactory tomcat = new TomcatServletWebServerFactory();
         tomcat.addAdditionalTomcatConnectors(createStandardConnector());
         return tomcat;
     }
+
     private Connector createStandardConnector() {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         connector.setPort(8080);
         return connector;
     }
+
     private Connector createSslConnector() {
         Connector connector = new Connector("org.apache.coyote.http11.Http11NioProtocol");
         Http11NioProtocol protocol = (Http11NioProtocol) connector.getProtocolHandler();
@@ -54,12 +56,11 @@ public class CustomServletContainer implements WebServerFactoryCustomizer<Config
             protocol.setKeystoreFile(keystore.getAbsolutePath());
             protocol.setKeystorePass("123456");
             protocol.setKeystoreType("PKCS12");
-//            protocol.setTruststoreFile(truststore.getAbsolutePath());
+            //            protocol.setTruststoreFile(truststore.getAbsolutePath());
             ////            protocol.setTruststorePass("password");
             protocol.setKeyAlias("tomcat");
             return connector;
-        }
-        catch (IOException ex) {
+        } catch (IOException ex) {
             throw new IllegalStateException("can't access keystore: [" + "keystore"
                                             + "] or truststore: [" + "keystore" + "]", ex);
         }

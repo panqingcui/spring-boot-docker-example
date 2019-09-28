@@ -17,6 +17,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TaskAsyncTest {
     @Autowired
     TaskAsync taskAsync;
+
     @Test
     public void test() throws Exception {
         taskAsync.one();
